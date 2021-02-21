@@ -7,6 +7,7 @@ public class StructureTiles : TileMap
     // private int a = 2;
     // private string b = "text";
     MouseArea mouseArea;
+    Vector2 mouseTile;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready() {
@@ -22,7 +23,6 @@ public class StructureTiles : TileMap
 
     private void HandleMouseInput(InputEventMouseButton eventMouseButton) {
         if (eventMouseButton.Pressed == false) {
-            var mouseTile = WorldToMap(GetGlobalMousePosition());
             if (eventMouseButton.ButtonIndex == (int)ButtonList.Left) {
                 if (mouseArea.state == MouseArea.State.Valid) {
                     SetCell((int)mouseTile.x, (int)mouseTile.y, 0);
@@ -40,7 +40,7 @@ public class StructureTiles : TileMap
 
     public override void _PhysicsProcess(float delta)
     {
-        var mouseTile = WorldToMap(GetGlobalMousePosition());
+        mouseTile = WorldToMap(GetGlobalMousePosition());
         var mouseTilePosition = MapToWorld(mouseTile);
         mouseArea.Position = mouseTilePosition;
 
