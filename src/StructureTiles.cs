@@ -14,9 +14,14 @@ public class StructureTiles : TileMap
 
     public override void _Input(InputEvent @event) {
         if (@event is InputEventMouseButton eventMouseButton) {
-            var mouseTile = WorldToMap(GetGlobalMousePosition());
-            GD.Print(mouseTile);
-            SetCell((int)mouseTile.x, (int)mouseTile.y, 0);
+            if (eventMouseButton.Pressed == false) {
+                var mouseTile = WorldToMap(GetGlobalMousePosition());
+                if (eventMouseButton.ButtonIndex == (int)ButtonList.Left) {  
+                    SetCell((int)mouseTile.x, (int)mouseTile.y, 0);
+                } else if (eventMouseButton.ButtonIndex == (int)ButtonList.Right) {
+                    SetCell((int)mouseTile.x, (int)mouseTile.y, -1);
+                }
+            }
         }
     }
 

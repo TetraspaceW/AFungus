@@ -10,8 +10,10 @@ public class Level : Node2D
     // Called when the node enters the scene tree for the first time.
     [Export] PackedScene LittleGuyScene;
     float time = 0;
+    AudioStreamPlayer audioStreamPlayer;
     public override void _Ready() {
-        
+        audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+        audioStreamPlayer.Playing = false;
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Verdant_Forest.ogg-7d75cf9cb6f7652e6d4aa866b62f2eba.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/Verdant_Forest.ogg"
+dest_files=[ "res://.import/Verdant_Forest.ogg-7d75cf9cb6f7652e6d4aa866b62f2eba.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
