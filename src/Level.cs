@@ -21,8 +21,8 @@ public class Level : Node2D
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta) {
         time += delta;
-        if (time > 1 && littleGuysOnMap < numberOfLittleGuys) {
-            time -= 1;
+        if (time > 1f && littleGuysOnMap < numberOfLittleGuys) {
+            time -= 1f;
             var newLittleGuy = (LittleGuy)LittleGuyScene.Instance();
             newLittleGuy.Position = new Vector2(40,60);
             AddChild(newLittleGuy);
