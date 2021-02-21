@@ -7,7 +7,7 @@ public class LittleGuy : KinematicBody2D
     // private int a = 2;
     // private string b = "text";
     private Vector2 horizontalVelocity;
-    private float speed = 60;
+    private float speed = 30;
     private Vector2 verticalVelocity;
     private AnimatedSprite sprite;
     private GraphicsState graphicsState = GraphicsState.Idle;

@@ -9,8 +9,10 @@ public class Level : Node2D
 
     // Called when the node enters the scene tree for the first time.
     [Export] PackedScene LittleGuyScene;
-    float time = 0;
     AudioStreamPlayer audioStreamPlayer;
+    float time = 0;
+    int numberOfLittleGuys = 20;
+    int littleGuysOnMap = 0;
     public override void _Ready() {
         audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
         audioStreamPlayer.Playing = false;
@@ -19,11 +21,12 @@ public class Level : Node2D
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta) {
         time += delta;
-        if (time > 1) {
+        if (time > 1 && littleGuysOnMap < numberOfLittleGuys) {
             time -= 1;
             var newLittleGuy = (LittleGuy)LittleGuyScene.Instance();
             newLittleGuy.Position = new Vector2(40,60);
             AddChild(newLittleGuy);
+            littleGuysOnMap++;
         }
     }
 }
