@@ -11,7 +11,8 @@ public class Level : Node2D
     [Export] PackedScene LittleGuyScene;
     AudioStreamPlayer audioStreamPlayer;
     float time = 0;
-    int numberOfLittleGuys = 20;
+    [Export] int numberOfLittleGuys;
+    [Export] float intervalBetweenLittleGuys;
     int littleGuysOnMap = 0;
     public override void _Ready() {
         audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
@@ -21,8 +22,8 @@ public class Level : Node2D
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta) {
         time += delta;
-        if (time > 1f && littleGuysOnMap < numberOfLittleGuys) {
-            time -= 1f;
+        if (time > intervalBetweenLittleGuys && littleGuysOnMap < numberOfLittleGuys) {
+            time -= intervalBetweenLittleGuys;
             var newLittleGuy = (LittleGuy)LittleGuyScene.Instance();
             newLittleGuy.Position = new Vector2(40,60);
             AddChild(newLittleGuy);

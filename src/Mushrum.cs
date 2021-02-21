@@ -7,7 +7,7 @@ public class Mushrum : KinematicBody2D
     // private int a = 2;
     // private string b = "text";
     private Vector2 horizontalVelocity;
-    public int speed = 240;
+    [Export] public int speed = 240;
     private Vector2 verticalVelocity;
     private AnimatedSprite sprite;
     private GraphicsState graphicsState = GraphicsState.Idle;
@@ -47,6 +47,10 @@ public class Mushrum : KinematicBody2D
 
         var velocity = horizontalVelocity + verticalVelocity;
         MoveAndSlide(velocity,PhysicsConstants.upDirection,true);
+
+        if (IsOnCeiling()) {
+            verticalVelocity.y = 0;
+        }
 
         if (IsOnFloor()) {
             if (Input.IsActionPressed("ui_up")) {
