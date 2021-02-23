@@ -1,23 +1,31 @@
-name: Build Godot Project
+name: "godot-ci export"
+on: push
 
-on:
-  push:
-    branches:
-      - master
+env:
+  GODOT_VERSION: 3.2.3
+  EXPORT_NAME: AFungusFallGuys
 
 jobs:
-  Godot:
+  export-windows:
+    name: Windows Export
     runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:mono-3.2.3
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Build
-        uses: josephbmanley/build-godot-action@v1.4.0
         with:
-          name: AFungusFallGuys
-          preset: windows
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/templates/${GODOT_VERSION}.stable.mono
+      - name: Windows Build
+        run: |
+          mkdir -v -p build/windows
+          godot -v --export "windows" ../build/windows/$EXPORT_NAME.exe
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v1
         with:
-          name: AFungusFallGuys - windows
-          path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
+          name: artifact
+          path: ../../AFungus/build/windows
