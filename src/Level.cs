@@ -17,7 +17,7 @@ public class Level : Node2D
     Mushrum mushrum;
     public override void _Ready() {
         audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
-        audioStreamPlayer.Playing = false;
+        audioStreamPlayer.Playing = true;
 
         mushrum = GetNode<Mushrum>("Mushrum");
         mushrum.Position = new Vector2();

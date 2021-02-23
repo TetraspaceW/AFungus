@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/Level.cs" type="Script" id=1]
 [ext_resource path="res://src/LittleGuy.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/VerdantForestTileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/graphics/Verdant_Forest_Background.png" type="Texture" id=5]
 [ext_resource path="res://assets/graphics/Tiles/Box.png" type="Texture" id=6]
+[ext_resource path="res://assets/sounds/Verdant_Forest_2.0.ogg" type="AudioStream" id=7]
 [ext_resource path="res://src/StructureTiles.cs" type="Script" id=8]
 [ext_resource path="res://src/MouseArea.cs" type="Script" id=10]
 [ext_resource path="res://src/MouseArea.tscn" type="PackedScene" id=11]
@@ -50,9 +51,11 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
 LittleGuyScene = ExtResource( 2 )
-numberOfLittleGuys = 1000
+numberOfLittleGuys = 20
+intervalBetweenLittleGuys = 1.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 volume_db = -15.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
