@@ -60,6 +60,12 @@ public class Mushrum : KinematicBody2D
             }
         }
 
+        if (velocity.Length() > 900) {
+            horizontalVelocity = new Vector2();
+            verticalVelocity = new Vector2();
+            Position = new Vector2();
+        }
+
         SetAnimation();
     }
     

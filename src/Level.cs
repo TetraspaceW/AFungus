@@ -14,9 +14,13 @@ public class Level : Node2D
     [Export] int numberOfLittleGuys;
     [Export] float intervalBetweenLittleGuys;
     int littleGuysOnMap = 0;
+    Mushrum mushrum;
     public override void _Ready() {
         audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
         audioStreamPlayer.Playing = false;
+
+        mushrum = GetNode<Mushrum>("Mushrum");
+        mushrum.Position = new Vector2();
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,7 +29,7 @@ public class Level : Node2D
         if (time > intervalBetweenLittleGuys && littleGuysOnMap < numberOfLittleGuys) {
             time -= intervalBetweenLittleGuys;
             var newLittleGuy = (LittleGuy)LittleGuyScene.Instance();
-            newLittleGuy.Position = new Vector2(40,60);
+            newLittleGuy.Position = new Vector2(0,0);
             AddChild(newLittleGuy);
             littleGuysOnMap++;
         }
