@@ -51,8 +51,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
 LittleGuyScene = ExtResource( 2 )
-numberOfLittleGuys = 1
-intervalBetweenLittleGuys = 1.0
+numberOfLittleGuys = 1000
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
