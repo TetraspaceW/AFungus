@@ -1,3 +1,6 @@
 public enum StructureMaterial {
-    Wood
+    Wood,
+    Dirt,
+    Stone,
+    Metal
 }
