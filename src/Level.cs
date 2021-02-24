@@ -33,5 +33,9 @@ public class Level : Node2D
             AddChild(newLittleGuy);
             littleGuysOnMap++;
         }
+
+        if (Input.IsActionJustReleased("mute")) {
+            audioStreamPlayer.Playing = !audioStreamPlayer.Playing;
+        }
     }
 }
