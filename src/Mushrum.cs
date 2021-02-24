@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public class Mushrum : KinematicBody2D
 {
@@ -11,6 +12,10 @@ public class Mushrum : KinematicBody2D
     private Vector2 verticalVelocity;
     private AnimatedSprite sprite;
     private GraphicsState graphicsState = GraphicsState.Idle;
+
+    public Dictionary<StructureMaterial,int> materialSupply = new Dictionary<StructureMaterial, int>() {
+        {StructureMaterial.Wood, 0}
+    };
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -87,5 +92,9 @@ public class Mushrum : KinematicBody2D
             case GraphicsState.Walking: sprite.Animation = "walk"; break;
             case GraphicsState.Jumping: sprite.Animation = "jump"; break;
         }
+    }
+
+    public void CollectMaterial(StructureMaterial material) {
+        materialSupply[material]++;
     }
 }
