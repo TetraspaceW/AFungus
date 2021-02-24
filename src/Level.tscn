@@ -67,7 +67,7 @@ material = SubResource( 1 )
 motion_scale = Vector2( 0.5, 0 )
 
 [node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( -6, -44 )
+position = Vector2( -6, 0 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 100000, 284 )
@@ -92,7 +92,7 @@ speed = 120
 
 [node name="Camera2D" type="Camera2D" parent="Mushrum"]
 current = true
-zoom = Vector2( 0.25, 0.3 )
+zoom = Vector2( 0.45, 0.45 )
 process_mode = 0
 smoothing_enabled = true
 smoothing_speed = 20.0
