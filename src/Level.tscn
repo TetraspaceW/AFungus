@@ -66,7 +66,7 @@ material = SubResource( 1 )
 motion_scale = Vector2( 0.5, 0 )
 
 [node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( -6, -40 )
+position = Vector2( -6, -44 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 100000, 284 )
@@ -82,7 +82,7 @@ format = 1
 script = ExtResource( 8 )
 
 [node name="MouseArea" parent="StructureTiles" instance=ExtResource( 11 )]
-position = Vector2( 0, -13 )
+position = Vector2( -15, -16 )
 script = ExtResource( 10 )
 
 [node name="Mushrum" parent="." instance=ExtResource( 3 )]
