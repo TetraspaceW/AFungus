@@ -12,6 +12,8 @@ public class Mushrum : KinematicBody2D
     private AnimatedSprite sprite;
     private GraphicsState graphicsState = GraphicsState.Idle;
 
+    public int woodSupply = 0;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -87,5 +89,9 @@ public class Mushrum : KinematicBody2D
             case GraphicsState.Walking: sprite.Animation = "walk"; break;
             case GraphicsState.Jumping: sprite.Animation = "jump"; break;
         }
+    }
+
+    public void CollectWood() {
+        woodSupply++;
     }
 }
