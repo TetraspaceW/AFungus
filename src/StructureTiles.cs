@@ -33,8 +33,10 @@ public class StructureTiles : TileMap
                 }
             } else if (eventMouseButton.ButtonIndex == (int)ButtonList.Right) {
                 var currentCell = GetCell((int)mouseTile.x, (int)mouseTile.y);
-                SetCell((int)mouseTile.x, (int)mouseTile.y, -1);
-                tilePlacer.materialSupply[materialOf(currentCell)]--;
+                if (currentCell != -1) {
+                    SetCell((int)mouseTile.x, (int)mouseTile.y, -1);
+                    tilePlacer.materialSupply[materialOf(currentCell)]++;
+                }
             }
         }
     }
