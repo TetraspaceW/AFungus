@@ -35,7 +35,7 @@ public class Level : Node2D
         }
 
         if (Input.IsActionJustReleased("mute")) {
-            audioStreamPlayer.Playing = !audioStreamPlayer.Playing;
+            audioStreamPlayer.StreamPaused = !audioStreamPlayer.StreamPaused;
         }
     }
 }

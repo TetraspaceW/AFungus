@@ -58,6 +58,7 @@ intervalBetweenLittleGuys = 1.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -15.0
+autoplay = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1
