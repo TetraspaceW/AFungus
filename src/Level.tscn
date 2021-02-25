@@ -1,16 +1,21 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/Level.cs" type="Script" id=1]
 [ext_resource path="res://src/LittleGuy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Mushrum.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/VerdantForestTileMap.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/graphics/Verdant_Forest_Background.png" type="Texture" id=5]
+[ext_resource path="res://assets/graphics/Backgrounds/VerdantForest/foreground_0_grass.png" type="Texture" id=5]
 [ext_resource path="res://assets/graphics/Tiles/Box.png" type="Texture" id=6]
 [ext_resource path="res://assets/sounds/Verdant_Forest_3.1.ogg" type="AudioStream" id=7]
 [ext_resource path="res://src/StructureTiles.cs" type="Script" id=8]
 [ext_resource path="res://src/CollectibleWood.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/MouseArea.cs" type="Script" id=10]
 [ext_resource path="res://src/MouseArea.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/graphics/Backgrounds/VerdantForest/background_0_grass.png" type="Texture" id=12]
+[ext_resource path="res://assets/graphics/Backgrounds/VerdantForest/background_2_tree_left.png" type="Texture" id=13]
+[ext_resource path="res://assets/graphics/Backgrounds/VerdantForest/foreground_1_light.png" type="Texture" id=14]
+[ext_resource path="res://assets/graphics/Backgrounds/VerdantForest/background_4_solid_colour.png" type="Texture" id=15]
+[ext_resource path="res://assets/graphics/Backgrounds/VerdantForest/background_1_tree_right.png" type="Texture" id=16]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -63,13 +68,63 @@ autoplay = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+material = SubResource( 1 )
+motion_scale = Vector2( 0.167, 0 )
+
+[node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( -6, 0 )
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 100000, 284 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+material = SubResource( 1 )
+motion_scale = Vector2( 0.2, 0 )
+
+[node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( -6, 0 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 100000, 284 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+material = SubResource( 1 )
+motion_scale = Vector2( 0.25, 0 )
+
+[node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( -6, 0 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 100000, 284 )
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+material = SubResource( 1 )
+motion_scale = Vector2( 0.333, 0 )
+
+[node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer1"]
+position = Vector2( -6, 0 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 100000, 284 )
+
+[node name="ParallaxLayer0" type="ParallaxLayer" parent="ParallaxBackground"]
 material = SubResource( 1 )
 motion_scale = Vector2( 0.5, 0 )
 
-[node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer0"]
 position = Vector2( -6, 0 )
-texture = ExtResource( 5 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 100000, 284 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+material = SubResource( 1 )
+motion_scale = Vector2( 0.5, 0 )
+
+[node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2( -6, 0 )
+texture = ExtResource( 14 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 100000, 284 )
 
@@ -98,20 +153,21 @@ process_mode = 0
 smoothing_enabled = true
 smoothing_speed = 20.0
 
-[node name="ParallaxForeground" type="ParallaxBackground" parent="."]
-layer = 1
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxForeground"]
-material = SubResource( 1 )
-motion_scale = Vector2( 1.5, 1.5 )
-
-[node name="foreground" type="Sprite" parent="ParallaxForeground/ParallaxLayer"]
-visible = false
-region_enabled = true
-region_rect = Rect2( 0, 0, 10000, 10000 )
-
 [node name="CollectibleWood" parent="." instance=ExtResource( 9 )]
 position = Vector2( 401, 80 )
 
 [node name="CollectibleWood2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 303, 80 )
+
+[node name="ParallaxForeground" type="ParallaxBackground" parent="."]
+layer = 0
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxForeground"]
+material = SubResource( 1 )
+motion_scale = Vector2( 1.1, 0 )
+
+[node name="background" type="Sprite" parent="ParallaxForeground/ParallaxLayer1"]
+position = Vector2( -6, 0 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 100000, 284 )
