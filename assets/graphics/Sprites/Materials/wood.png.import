@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LittleGuyWalk.png-6316802efd33a7d8f493d31c1f1d30d1.stex"
+path="res://.import/wood.png-086d1e1df6c0ca16428927d16ac414a4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/LittleGuy/LittleGuyWalk.png"
-dest_files=[ "res://.import/LittleGuyWalk.png-6316802efd33a7d8f493d31c1f1d30d1.stex" ]
+source_file="res://assets/graphics/Sprites/Materials/wood.png"
+dest_files=[ "res://.import/wood.png-086d1e1df6c0ca16428927d16ac414a4.stex" ]
 
 [params]
 

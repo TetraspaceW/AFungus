@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Verdant_Forest_Background.png-7f830aea5b0f039e57a293d01aa20949.stex"
+path="res://.import/LittleGuyWalk.png-4b8c4366a2a065bcf58aa33e96556757.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/Verdant_Forest_Background.png"
-dest_files=[ "res://.import/Verdant_Forest_Background.png-7f830aea5b0f039e57a293d01aa20949.stex" ]
+source_file="res://assets/graphics/Sprites/LittleGuy/LittleGuyWalk.png"
+dest_files=[ "res://.import/LittleGuyWalk.png-4b8c4366a2a065bcf58aa33e96556757.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

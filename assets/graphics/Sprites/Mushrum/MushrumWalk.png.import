@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wood.png-c6b0782adc7d81e3480945aa4ac5306b.stex"
+path="res://.import/MushrumWalk.png-18d741f923809b5c805f68605c01d5b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/wood.png"
-dest_files=[ "res://.import/wood.png-c6b0782adc7d81e3480945aa4ac5306b.stex" ]
+source_file="res://assets/graphics/Sprites/Mushrum/MushrumWalk.png"
+dest_files=[ "res://.import/MushrumWalk.png-18d741f923809b5c805f68605c01d5b9.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LittleGuyFalling.png-bb67a51632fd6697e130a4cf74c731f6.stex"
+path="res://.import/LittleGuyIdle.png-388bdc91a1631a123829afae7d890df3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/LittleGuy/LittleGuyFalling.png"
-dest_files=[ "res://.import/LittleGuyFalling.png-bb67a51632fd6697e130a4cf74c731f6.stex" ]
+source_file="res://assets/graphics/Sprites/LittleGuy/LittleGuyIdle.png"
+dest_files=[ "res://.import/LittleGuyIdle.png-388bdc91a1631a123829afae7d890df3.stex" ]
 
 [params]
 

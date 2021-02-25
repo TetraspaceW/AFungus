@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background_1_tree_right.png-37208d6d3c2f6f398d4edc74741219ac.stex"
+path="res://.import/MushrumIdle.png-0ea505d80758c1799b961063ba2c7f5c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/Backgrounds/VerdantForest/background_1_tree_right.png"
-dest_files=[ "res://.import/background_1_tree_right.png-37208d6d3c2f6f398d4edc74741219ac.stex" ]
+source_file="res://assets/graphics/Sprites/Mushrum/MushrumIdle.png"
+dest_files=[ "res://.import/MushrumIdle.png-0ea505d80758c1799b961063ba2c7f5c.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

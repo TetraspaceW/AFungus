@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LittleGuyIdle.png-64c851af426b6787446e30822eae03d2.stex"
+path="res://.import/background_1_grass.png-24e95ee89ad3ada9bc9ced9d5a3da55e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/LittleGuy/LittleGuyIdle.png"
-dest_files=[ "res://.import/LittleGuyIdle.png-64c851af426b6787446e30822eae03d2.stex" ]
+source_file="res://assets/graphics/Backgrounds/VerdantForest/background_1_grass.png"
+dest_files=[ "res://.import/background_1_grass.png-24e95ee89ad3ada9bc9ced9d5a3da55e.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

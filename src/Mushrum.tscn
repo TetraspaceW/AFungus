@@ -1,9 +1,9 @@
 [gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/Mushrum.cs" type="Script" id=1]
-[ext_resource path="res://assets/graphics/Mushrum/MushrumIdle.png" type="Texture" id=2]
-[ext_resource path="res://assets/graphics/Mushrum/MushrumWalk.png" type="Texture" id=3]
-[ext_resource path="res://assets/graphics/Mushrum/MushrumJump.png" type="Texture" id=4]
+[ext_resource path="res://assets/graphics/Sprites/Mushrum/MushrumIdle.png" type="Texture" id=2]
+[ext_resource path="res://assets/graphics/Sprites/Mushrum/MushrumWalk.png" type="Texture" id=3]
+[ext_resource path="res://assets/graphics/Sprites/Mushrum/MushrumJump.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 12.5 )
@@ -101,5 +101,5 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 18 )
 animation = "walk"
-frame = 4
+frame = 5
 playing = true
