@@ -7,7 +7,7 @@ env:
 
 jobs:
   export-windows:
-    name: Windows Export
+    name: Windows export
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:mono-3.2.3
@@ -29,6 +29,10 @@ jobs:
         with:
           name: AFungusFallGuys
           path: ../../AFungus/build/windows
+  discord-notification:
+    name: Discord notification
+    runs-on: ubuntu-latest
+    steps:
       - name: Discord notification
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
