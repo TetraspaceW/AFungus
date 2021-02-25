@@ -1,17 +1,26 @@
 using Godot;
 using System;
 
-public class CollectibleWood : Area2D
+public class CollectiblePile : Area2D
 {
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
-    StructureMaterial material = StructureMaterial.Wood;
+    [Export] StructureMaterial material = StructureMaterial.Wood;
+    AnimatedSprite sprite;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+        sprite = GetNode<AnimatedSprite>("Sprite");
+        switch (material)
+        {
+            case StructureMaterial.Wood:
+                sprite.Animation = "Wood"; break;
+            case StructureMaterial.Stone:
+                sprite.Animation = "Stone"; break;
+            default: break;
+        }
     }
 
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.

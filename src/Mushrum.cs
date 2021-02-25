@@ -14,7 +14,8 @@ public class Mushrum : KinematicBody2D
     private GraphicsState graphicsState = GraphicsState.Idle;
 
     public Dictionary<StructureMaterial,int> materialSupply = new Dictionary<StructureMaterial, int>() {
-        {StructureMaterial.Wood, 0}
+        {StructureMaterial.Wood, 0},
+        {StructureMaterial.Stone, 0}
     };
 
     // Called when the node enters the scene tree for the first time.

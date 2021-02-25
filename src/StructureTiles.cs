@@ -28,7 +28,7 @@ public class StructureTiles : TileMap
         if (eventMouseButton.Pressed == false) {
             if (eventMouseButton.ButtonIndex == (int)ButtonList.Left) {
                 if (mouseArea.state == MouseArea.State.Valid) {
-                    SetCell((int)mouseTile.x, (int)mouseTile.y, 0);
+                    SetCell((int)mouseTile.x, (int)mouseTile.y, tileOf(materialPlaced));
                     tilePlacer.materialSupply[materialPlaced]--;
                 }
             } else if (eventMouseButton.ButtonIndex == (int)ButtonList.Right) {
@@ -37,6 +37,10 @@ public class StructureTiles : TileMap
                     SetCell((int)mouseTile.x, (int)mouseTile.y, -1);
                     tilePlacer.materialSupply[materialOf(currentCell)]++;
                 }
+            } else if (eventMouseButton.ButtonIndex == (int)ButtonList.WheelUp) {
+                SwitchMaterial();
+            } else if (eventMouseButton.ButtonIndex == (int)ButtonList.WheelDown) {
+                SwitchMaterial();
             }
         }
     }
@@ -55,13 +59,35 @@ public class StructureTiles : TileMap
         if (mouseArea.GetOverlappingAreas().Count + mouseArea.GetOverlappingBodies().Count == 0 
         && GetCell((int)mouseTile.x, (int)mouseTile.y) == -1
         && tilePlacer.materialSupply[materialPlaced] > 0) {
-            mouseArea.SetState(MouseArea.State.Valid);
+            mouseArea.SetState(MouseArea.State.Valid, materialPlaced);
         } else {
-            mouseArea.SetState(MouseArea.State.Invalid);
+            mouseArea.SetState(MouseArea.State.Invalid, materialPlaced);
         }
     }
 
+    public int tileOf(StructureMaterial material) {
+        switch (material) {
+            case StructureMaterial.Wood: return 0;
+            case StructureMaterial.Stone: return 1;
+            default: break;
+        }
+        return 0;
+    }
+
     public StructureMaterial materialOf(int tileID) {
+        switch (tileID) {
+            case 0: return StructureMaterial.Wood;
+            case 1: return StructureMaterial.Stone;
+            default: break;
+        }
         return StructureMaterial.Wood;
+    }
+
+    public void SwitchMaterial() {
+        switch (materialPlaced) {
+            case StructureMaterial.Wood: materialPlaced = StructureMaterial.Stone; break;
+            case StructureMaterial.Stone: materialPlaced = StructureMaterial.Wood; break;
+            default: break;
+        }
     }
 }
