@@ -41,6 +41,12 @@ public class Mushrum : KinematicBody2D
         }
 
         horizontalVelocity = horizontalVelocity.Normalized() * speed;
+
+        // Sandbox mode
+        if (Input.IsActionPressed("sandbox")) {
+            materialSupply[StructureMaterial.Wood] += 1000;
+            materialSupply[StructureMaterial.Stone] += 1000;
+        }
     }
 
     public override void _PhysicsProcess(float delta)
