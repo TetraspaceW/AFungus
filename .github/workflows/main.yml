@@ -29,3 +29,9 @@ jobs:
         with:
           name: AFungusFallGuys
           path: ../../AFungus/build/windows
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: 'A new build has been made, download at https://github.com/Holomanga/AFungus/actions/runs/${{github.run_id}}'
