@@ -187,9 +187,7 @@ smoothing_enabled = true
 smoothing_speed = 20.0
 
 [node name="CollectibleStone" parent="." instance=ExtResource( 9 )]
-material = 2
 position = Vector2( 401, 80 )
-material = 2
 
 [node name="CollectibleWood2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 302, 80 )
@@ -198,9 +196,7 @@ position = Vector2( 302, 80 )
 position = Vector2( 270, 80 )
 
 [node name="CollectibleStone2" parent="." instance=ExtResource( 9 )]
-material = 2
 position = Vector2( 433, 80 )
-material = 2
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
 layer = 0
